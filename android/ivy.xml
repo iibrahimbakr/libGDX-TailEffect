@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info  module="${project}" status="integration" branch="${dep.branch}"/>
+	<configurations> <conf name="default" /> <conf name="source" /> <conf name="lib" /> </configurations> 
+    
+	<publications>
+    	<artifact name="${project}" ext="jar" conf="default" />
+    	<artifact name="${project}-sources" type="sources" ext="jar" conf="source" />
+		<artifact name="${project}" ext="aar" conf="lib" type="aar" />
+    </publications>
+    
+	<dependencies>
+		<dependency org="net.sf.proguard" name="proguard-base" rev="5.3.2"/>
+ 		<dependency org="net.sf.proguard" name="proguard-anttask" rev="5.3.2"/>
+ 		<dependency org="com.google.android" name="support-v4" rev="r7" conf="default->default" />   
+		<dependency org="com.badlogicgames.gdx" name="gdx" rev="${gdx.version}" /> 	
+		<dependency org="com.badlogicgames.gdx" name="gdx-backend-android" rev="${gdx.version}" conf="default->default" />
+		<dependency org="com.badlogicgames.gdx" name="gdx-platform" rev="${gdx.version}" conf="default->default" />
+    </dependencies> 
+       
+</ivy-module> 
+ 
